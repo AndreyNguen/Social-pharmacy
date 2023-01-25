@@ -7,6 +7,7 @@ import path from 'path';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
 import apiUserRouter from './routes/apiUserRouter';
+import profileRouter from './routes/profileRouter';
 
 require('dotenv').config();
 
@@ -44,5 +45,6 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/api/user', apiUserRouter);
+app.use('/profile', profileRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
