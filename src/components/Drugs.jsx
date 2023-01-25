@@ -32,7 +32,7 @@ export default function Drugs({ allDrugs }) {
           onChange={(event) => sortHandler(event.target.value)}
         >
           <option disabled value="">
-            Сортирока товаров
+            Сортировка товаров
           </option>
           <option value={drugs.status}>По наличию</option>
           <option value={drugs.price}>По увеличению цены</option>
