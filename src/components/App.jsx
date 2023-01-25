@@ -12,7 +12,6 @@ export default function App({ user, allDrugs }) {
       <div>
         <Navbar user={user} />
       </div>
-
       <Routes>
         <Route path="/" element={<Drugs allDrugs={allDrugs} />} />
         <Route path="/profile" element={<Profile user={user} />} />

@@ -9,7 +9,9 @@ export default function OneCard({ drug }) {
         <p className="card-text">{drug.price}</p>
         <p className="card-text">{drug.status}</p>
         <p className="card-text">{drug.count}</p>
-        <a href="/" className="btn btn-primary">В корзину</a>
+        <a href="/" className="btn btn-primary">
+          В корзину
+        </a>
       </div>
     </div>
   );
