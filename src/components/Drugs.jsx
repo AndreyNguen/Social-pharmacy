@@ -23,6 +23,7 @@ export default function Drugs({ allDrugs }) {
   };
 
   return (
+
     <>
       <div className="col-3">
         <select
@@ -39,10 +40,8 @@ export default function Drugs({ allDrugs }) {
           <option value={drugs.price}>По уменьшению цены</option>
         </select>
       </div>
-      <div>
-        {drugs?.map((drug) => (
-          <OneCard drug={drug} key={drug.id} />
-        ))}
+      <div className="row mt-3" style={{ justifyContent: 'center' }}>
+        {drugs?.map((drug) => <OneCard drug={drug} key={drug.id} />)}
       </div>
     </>
   );
