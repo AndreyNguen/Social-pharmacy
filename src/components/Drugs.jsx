@@ -6,7 +6,7 @@ export default function Drugs({ allDrugs }) {
   // console.log(drugs, 'This is all drugs =====');
 
   return (
-    <div>
+    <div className="row mt-3" style={{ justifyContent: 'center' }}>
       {drugs?.map((drug) => <OneCard drug={drug} key={drug.id} />)}
     </div>
   );
