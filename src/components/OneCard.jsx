@@ -8,8 +8,18 @@ export default function OneCard({ drug }) {
       </div>
       <div className="body" style={{ flex: '1 1 auto' }}>
         <h5 className="card-title">{drug.name}</h5>
-        <p className="card-text">Стоимость: {drug.price} руб.</p>
-        <p className="card-text">Наличие на складе: {drug.count}</p>
+        <p className="card-text">
+          Стоимость:
+          {' '}
+          {drug.price}
+          {' '}
+          руб.
+        </p>
+        <p className="card-text">
+          Наличие на складе:
+          {' '}
+          {drug.count}
+        </p>
       </div>
       <a href="/" className="btn btn-primary">В корзину</a>
     </div>
