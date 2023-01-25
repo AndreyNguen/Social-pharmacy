@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function OneCard({ drug }) {
   return (
-    <div className="Onecard" style={{width: "18rem"}}>
+    <div className="Onecard" style={{ width: '18rem' }}>
       <img src={drug.img} className="card-img-top" alt="noImage" />
       <div className="card-body">
         <h5 className="card-title">{drug.name}</h5>

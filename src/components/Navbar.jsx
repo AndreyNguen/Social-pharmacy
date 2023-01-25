@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import Profile from './Profile';
 
 export default function Navbar({ user }) {
   const logoutHandler = () => {
@@ -39,6 +40,7 @@ export default function Navbar({ user }) {
                   Hello
                 </h5>
                 <h4>{user?.name}</h4>
+                <a className="navbar-brand" href="/profile"><h4>Profile</h4></a>
               </div>
               <div>
                 <button style={{ marginLeft: '20%' }} onClick={logoutHandler} type="button" className="btn btn-light">Logout</button>
