@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import OneCard from './OneCard';
 
 export default function Drugs({ allDrugs }) {
   const [drugs, setDrugs] = useState(allDrugs);
