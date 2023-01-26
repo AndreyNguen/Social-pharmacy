@@ -15,7 +15,7 @@ userRouter.post('/signup', async (req, res) => {
       },
     });
     if (!created) {
-      return res.status(401).send('Email is already create');
+      return res.send('Email is already create');
     }
     req.session.user = user;
     return res.sendStatus(200);

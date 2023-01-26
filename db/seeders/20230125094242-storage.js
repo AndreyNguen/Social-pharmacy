@@ -6,8 +6,8 @@ module.exports = {
         img: 'https://f.stolichki.ru/s/drugs/medium/67/67955.jpg',
         name: 'Витрум Иммунактив',
         price: 1210,
-        status: 'yes',
-        count: 130,
+        status: 'no',
+        count: 0,
       },
       {
         img: 'https://f.stolichki.ru/s/drugs/medium/34/34748.jpg',
@@ -46,7 +46,7 @@ module.exports = {
       },
       {
         img: 'https://f.stolichki.ru/s/drugs/medium/11/11910.jpg',
-        name: 'Купить Др. Вистонг',
+        name: 'Др. Вистонг',
         price: 170,
         status: 'no',
         count: 0,
@@ -55,8 +55,8 @@ module.exports = {
         img: 'https://f.stolichki.ru/s/drugs/medium/46/46434.jpg',
         name: 'Эссенциале форте Н',
         price: 2210,
-        status: 'no',
-        count: 0,
+        status: 'yes',
+        count: 130,
       },
       {
         img: 'https://f.stolichki.ru/s/drugs/medium/2/2587.jpg',
