@@ -23,9 +23,8 @@ export default function Drugs({ allDrugs }) {
   };
 
   return (
-
     <>
-      <div className="col-3">
+      <div style={{ display: 'flex', flexDirection: 'row', width: '30rem' }}>
         <select
           className="form-select"
           aria-label="Default select example"
