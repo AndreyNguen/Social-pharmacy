@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Calender from './Calender';
 import Drugs from './Drugs';
 import Navbar from './Navbar';
 import Profile from './Profile';
@@ -12,7 +11,6 @@ export default function App({ user, allDrugs }) {
     <>
       <div>
         <Navbar user={user} />
-        <Calender allDrugs={allDrugs} />
       </div>
       <Routes>
         <Route path="/" element={<Drugs allDrugs={allDrugs} />} />

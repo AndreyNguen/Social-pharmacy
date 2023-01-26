@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Calender from './Calender';
 import OneCard from './OneCard';
 
 export default function Drugs({ allDrugs }) {
@@ -24,6 +25,7 @@ export default function Drugs({ allDrugs }) {
 
   return (
     <>
+      <Calender allDrugs={allDrugs} />
       <div style={{ display: 'flex', flexDirection: 'row', width: '30rem' }}>
         <select
           className="form-select"
