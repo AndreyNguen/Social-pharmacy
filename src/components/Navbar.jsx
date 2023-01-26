@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import ModalWindow from './ModalWindow';
 import Profile from './Profile';
 
 export default function Navbar({ user }) {
@@ -12,7 +13,7 @@ export default function Navbar({ user }) {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark" data-bs-theme="dark">
+    <nav className="navbar navbar-expand-lg" style={{ backgroundColor: 'lightgreen' }}>
       <div className="container-fluid">
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
@@ -41,6 +42,7 @@ export default function Navbar({ user }) {
                 </h5>
                 <h4>{user?.name}</h4>
                 <a className="navbar-brand" href="/profile"><h4>Profile</h4></a>
+                <ModalWindow />
               </div>
               <div>
                 <button style={{ marginLeft: '20%' }} onClick={logoutHandler} type="button" className="btn btn-light">Logout</button>

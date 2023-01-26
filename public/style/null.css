@@ -1,4 +1,8 @@
 
 html,body{
-    background-color:lightgreen;
+    background-color:rgb(217, 238, 241);
+}
+
+.image-container {
+    background-color: gray;
 }

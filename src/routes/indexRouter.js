@@ -34,4 +34,13 @@ indexRouter.get('/signin', checkNoAuth, (req, res) => {
   }
 });
 
+indexRouter.get('/cart', checkNoAuth, (req, res) => {
+  try {
+    res.render('Layout');
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500, 'render signin');
+  }
+});
+
 export default indexRouter;

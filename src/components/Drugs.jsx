@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import OneCard from './OneCard';
 
-export default function Drugs({ allDrugs }) {
+export default function Drugs({ allDrugs, setModal }) {
   const [drugs, setDrugs] = useState(allDrugs);
   const [selectSort, setSelectSort] = useState('');
 
@@ -41,7 +41,7 @@ export default function Drugs({ allDrugs }) {
         </select>
       </div>
       <div className="row mt-3" style={{ justifyContent: 'center' }}>
-        {drugs?.map((drug) => <OneCard drug={drug} key={drug.id} />)}
+        {drugs?.map((drug) => <OneCard setModal={setModal} drug={drug} key={drug.id} />)}
       </div>
     </>
   );
