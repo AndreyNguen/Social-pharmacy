@@ -14,7 +14,7 @@ export default function App({ user, allDrugs }) {
       </div>
       <Routes>
         <Route path="/" element={<Drugs allDrugs={allDrugs} />} />
-        <Route path="/profile" element={<Profile user={user} />} />
+        <Route path="/profile" element={<Profile user={user} allDrugs={allDrugs} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
       </Routes>
