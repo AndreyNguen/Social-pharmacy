@@ -11,7 +11,7 @@ import OneLittleCard from './OneLittleCard';
 
 export default function Calender({ allDrugs }) {
   const alldrugs = [...allDrugs];
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(9);
   const freeIndexes = [
     [5, 1, 2],
     [4, 2, 3],
