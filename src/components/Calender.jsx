@@ -41,8 +41,8 @@ export default function Calender({ allDrugs }) {
   return (
     <div className="row mt-3" style={{ justifyContent: 'center' }}>
       <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
-        <button className="btn btn-light border border-1 m-1" onClick={() => setCurrentIndex((prev) => prev - 1)} type="button">Предудыдущая неделя</button>
-        <button className="btn btn-light border border-1 m-1" onClick={() => setCurrentIndex((prev) => prev + 1)} type="button">Следущая неделя</button>
+        <button style={{ background: '#3a3f58', color: '#ece6cd' }} className="btn btn-light border border-1 m-1" onClick={() => setCurrentIndex((prev) => prev - 1)} type="button">Предудыдущая неделя</button>
+        <button style={{ background: '#3a3f58', color: '#ece6cd' }} className="btn btn-light border border-1 m-1" onClick={() => setCurrentIndex((prev) => prev + 1)} type="button">Следущая неделя</button>
       </div>
       {threeFreeDrugs.map((el) => <OneLittleCard key={el.id} drug={el} />)}
     </div>

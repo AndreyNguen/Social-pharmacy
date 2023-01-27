@@ -12,7 +12,7 @@ export default function Drugs({ allDrugs, setModal }) {
       setDrugs(
         drugs
           .filter((el) => el.status === 'yes')
-          .concat(drugs.filter((el) => el.status === 'no'))
+          .concat(drugs.filter((el) => el.status === 'no')),
       );
     }
     if (sort === 'По увеличению цены') {

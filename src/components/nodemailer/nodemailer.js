@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport(
   },
   {
     from: 'Social Pharmacy <piskarev_socialpharm@mail.ru>',
-  }
+  },
 );
 
 const mailer = (message) => {

@@ -4,15 +4,15 @@ export default function ModalWindow({ drug }) {
   const [drugsCart, setDrugsCart] = useState([]);
   useEffect(() => {
     console.log('YA IN USEEFFECT');
-    for (let i = 1; i <= localStorage.length; i++) {
+    for (let i = 1; i <= localStorage.length; i += 1) {
       setDrugsCart((prev) => [...prev, localStorage.key(i)]);
     }
   }, []);
   console.log(drugsCart);
   return (
     <>
-      <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Cart
+      <button style={{ background: '#3a3f58', color: '#ece6cd' }} type="button" className="btn btn-light border border-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Корзина
       </button>
       <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div className="modal-dialog">
