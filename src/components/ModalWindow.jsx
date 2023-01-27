@@ -2,6 +2,8 @@ import React from 'react';
 import ModalCard from './ModalCard';
 
 export default function ModalWindow({ modal }) {
+  console.log(modal);
+  const allPrice = modal.reduce((acc, el) => acc + el.price, 0);
   return (
     <>
       <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -18,8 +20,13 @@ export default function ModalWindow({ modal }) {
               { modal?.map((el) => <ModalCard key={el.id} el={el} />)}
             </div>
 
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            <div className="modal-footer" style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <div>
+                Итого:
+                {' '}
+                {allPrice}
+              </div>
+              {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button> */}
               <button type="button" className="btn btn-primary">Оформить заказ</button>
             </div>
           </div>
