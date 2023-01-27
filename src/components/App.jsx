@@ -15,7 +15,7 @@ export default function App({ user, allDrugs }) {
         <Navbar modal={modal} user={user} />
       </div>
       <Routes>
-        <Route path="/" element={<Drugs allDrugs={allDrugs} />} />
+        <Route path="/" element={<Drugs setModal={setModal} allDrugs={allDrugs} />} />
         <Route path="/profile" element={<Profile user={user} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />

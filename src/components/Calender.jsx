@@ -31,7 +31,12 @@ export default function Calender({ allDrugs }) {
     [9, 3, 2],
     [2, 4, 1],
   ];
-
+  if (currentIndex < 0) {
+    return setCurrentIndex(6);
+  }
+  if (currentIndex >= freeIndexes.length) {
+    return setCurrentIndex(7);
+  }
   // useState -> currentIndex
   // onClick -> currentIndex++ / --
   // useEffect: [currentIndex] -> threeFreeDrugs % freeIndexes.length !
