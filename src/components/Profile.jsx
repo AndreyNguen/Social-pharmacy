@@ -49,7 +49,7 @@ export default function Profile({ user }) {
       <div>
         <div className="changeName">
           {viewInputName ? (
-            <div>
+            <div style={{ color: '#ece6cd', maxWidth: '500px' }}>
               <input
                 name="name"
                 value={editInput.name}
@@ -57,23 +57,32 @@ export default function Profile({ user }) {
                 type="text"
                 className="form-control border border-2 border-dark"
                 placeholder="Введите новое имя пользователя"
+                style={{ background: 'lightgrey' }}
               />
-              <button onClick={() => saveHandler(user.id)} type="button" className="btn btn-dark m-1">save</button>
-              <button onClick={() => setInputName(false)} type="button" className="btn btn-dark">close</button>
+              <button onClick={() => saveHandler(user.id)} type="button" style={{ background: '#3a3f58', color: '#ece6cd' }} className="btn btn-dark m-1">save</button>
+              <button onClick={() => setInputName(false)} type="button" style={{ background: '#3a3f58', color: '#ece6cd' }} className="btn btn-dark">close</button>
             </div>
           ) : (
-            <div className="d-flex m-3">
+            <div className="d-flex m-3 " style={{ display: 'flex', alignItems: 'center', columnGap: '20px' }}>
               <h4>Имя пользователя:</h4>
               <h3>{changeProfile?.name}</h3>
               <div>
-                <button onClick={clickHandlerName} className="btn btn-success border border-dark border-1" type="button">Изменить</button>
+                <button
+                  onClick={clickHandlerName}
+                  style={{ background: '#3a3f58', color: '#ece6cd' }}
+                  className="btn btn-success border border-dark border-1"
+                  type="button"
+                >
+                  Изменить
+
+                </button>
               </div>
             </div>
           )}
         </div>
         <div className="changeEmail">
           {viewInputEmail ? (
-            <div>
+            <div style={{ color: '#ece6cd', maxWidth: '500px' }}>
               <input
                 name="email"
                 value={editInput.email}
@@ -81,55 +90,75 @@ export default function Profile({ user }) {
                 type="email"
                 className="form-control border border-2 border-dark"
                 placeholder="Введите новую электронную почту"
+                style={{ background: 'lightgrey' }}
               />
-              <button onClick={() => saveHandler(user.id)} type="button" className="btn btn-dark m-1">save</button>
-              <button onClick={() => setInputEmail(false)} type="button" className="btn btn-dark">close</button>
+              <button onClick={() => saveHandler(user.id)} type="button" style={{ background: '#3a3f58', color: '#ece6cd' }} className="btn btn-dark m-1">save</button>
+              <button onClick={() => setInputEmail(false)} type="button" style={{ background: '#3a3f58', color: '#ece6cd' }} className="btn btn-dark">close</button>
             </div>
           ) : (
-            <div className="d-flex m-3">
+            <div className="d-flex m-3" style={{ display: 'flex', alignItems: 'center', columnGap: '20px' }}>
               <h4>Электронная почта:</h4>
               <h3>{changeProfile?.email}</h3>
               <div>
-                <button onClick={clickHandlerEmail} className="btn btn-success border border-dark border-1" type="button">Изменить</button>
+                <button
+                  onClick={clickHandlerEmail}
+                  style={{ background: '#3a3f58', color: '#ece6cd' }}
+                  className="btn btn-success border border-dark border-1"
+                  type="button"
+                >
+                  Изменить
+
+                </button>
               </div>
             </div>
           )}
         </div>
         <div className="changePassword">
           {viewInputPassword ? (
-            <>
+            <div style={{ color: '#ece6cd', maxWidth: '500px' }}>
               <input
                 name="oldPass"
                 onChange={changeHandler}
                 type="password"
-                className="form-control border border-2 border-dark"
+                className="form-control border border-2 border-dark m-1"
                 placeholder="Введите старый пароль"
+                style={{ background: 'lightgrey' }}
               />
               <input
                 name="newPass"
                 onChange={changeHandler}
                 type="password"
-                className="form-control border border-2 border-dark"
+                className="form-control border border-2 border-dark m-1"
                 placeholder="Введите новый пароль"
+                style={{ background: 'lightgrey' }}
               />
               <input
                 name="repeatPass"
                 onChange={changeHandler}
                 type="password"
-                className="form-control border border-2 border-dark"
+                className="form-control border border-2 border-dark m-1"
                 placeholder="Повторите пароль"
+                style={{ background: 'lightgrey' }}
               />
-              <button onClick={() => saveHandler(user.id)} type="button" className="btn btn-dark m-1">save</button>
-              <button onClick={() => setInputPassword(false)} type="button" className="btn btn-dark">close</button>
-            </>
+              <button onClick={() => saveHandler(user.id)} type="button" style={{ background: '#3a3f58', color: '#ece6cd' }} className="btn btn-drk m-1">save</button>
+              <button onClick={() => setInputPassword(false)} type="button" style={{ background: '#3a3f58', color: '#ece6cd' }} className="btn btn-dark">close</button>
+            </div>
           ) : (
-            <div className="d-flex m-3">
+            <div className="d-flex m-3" style={{ display: 'flex', alignItems: 'center', columnGap: '20px' }}>
               <h4>
                 Пароль:
               </h4>
               <h3>*******</h3>
               <div>
-                <button onClick={clickHandlerPassword} className="btn btn-success border border-dark border-1" type="button">Изменить</button>
+                <button
+                  onClick={clickHandlerPassword}
+                  style={{ background: '#3a3f58', color: '#ece6cd' }}
+                  className="btn btn-success border border-dark border-1"
+                  type="button"
+                >
+                  Изменить
+
+                </button>
               </div>
             </div>
           )}

@@ -1,9 +1,8 @@
 import axios from 'axios';
 import React from 'react';
 import ModalWindow from './ModalWindow';
-import Profile from './Profile';
 
-export default function Navbar({ user }) {
+export default function Navbar({ user, modal }) {
   const logoutHandler = () => {
     axios('/api/user/logout')
       .then(() => {
@@ -13,12 +12,15 @@ export default function Navbar({ user }) {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg" style={{ backgroundColor: 'lightgreen' }}>
+    <nav className="navbar navbar-expand-lg border border-1 border-grey round-3" style={{ backgroundColor: '#f9ac67' }}>
       <div className="container-fluid">
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/"><h4>Социальная аптека</h4></a>
+              <a href="/">
+                <img className="figure-img img-fluid rounded" src="https://img.icons8.com/pastel-glyph/64/null/hospital--v6.png" alt="noimg:(" href="/" />
+                АПТЕКА
+              </a>
             </li>
           </ul>
         </div>
@@ -28,30 +30,28 @@ export default function Navbar({ user }) {
           {!user?.id ? (
             <>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/signup">Registration</a>
+                <a className="nav-link active" aria-current="page" href="/signup">Регистрация</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/signin">Login</a>
+                <a className="nav-link active" aria-current="page" href="/signin">Вход</a>
               </li>
             </>
           ) : (
             <div style={{ display: 'flex', columnGap: '15px', alignItems: 'center' }}>
               <div style={{ display: 'flex', alignItems: 'center', columnGap: '15px' }}>
-                <h5>
-                  Hello
+                <h5 style={{ color: '#3a3f58' }}>
+                  Привет:
                 </h5>
-                <h4>{user?.name}</h4>
-                <a className="navbar-brand" href="/profile"><h4>Profile</h4></a>
-                <ModalWindow />
+                <h4 style={{ color: '#3a3f58' }}>{user?.name}</h4>
+                <a className="navbar-brand" href="/profile"><h5 style={{ color: '#3a3f58' }}>Личный кабинет</h5></a>
               </div>
+              <ModalWindow modal={modal}/>
               <div>
-                <button style={{ marginLeft: '20%' }} onClick={logoutHandler} type="button" className="btn btn-light">Logout</button>
+                <button style={{ marginLeft: '20%', background: '#3a3f58', color: '#ece6cd' }} onClick={logoutHandler} type="button" className="btn btn-light border border-dark">Выйти</button>
               </div>
             </div>
           )}
-
         </ul>
-
       </div>
     </nav>
   );

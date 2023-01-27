@@ -12,7 +12,7 @@ export default function Drugs({ allDrugs, setModal }) {
       setDrugs(
         drugs
           .filter((el) => el.status === 'yes')
-          .concat(drugs.filter((el) => el.status === 'no'))
+          .concat(drugs.filter((el) => el.status === 'no')),
       );
     }
     if (sort === 'По увеличению цены') {
@@ -25,7 +25,7 @@ export default function Drugs({ allDrugs, setModal }) {
 
   return (
     <>
-      <Calender allDrugs={allDrugs} />
+      <Calender setModal={setModal} allDrugs={allDrugs} />
       <div style={{ display: 'flex', flexDirection: 'row', width: '30rem' }}>
         <select
           className="form-select"
