@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function OneLittleCard({ drug, setModal}) {
-const cartHandler = () => {
+export default function OneLittleCard({ drug, setModal }) {
+  const cartHandler = () => {
     setModal((prev) => [...prev, drug]);
   };
   return (
