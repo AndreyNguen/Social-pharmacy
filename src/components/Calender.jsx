@@ -9,7 +9,7 @@ import OneLittleCard from './OneLittleCard';
 //   return arr;
 // }
 
-export default function Calender({ allDrugs }) {
+export default function Calender({ allDrugs, setModal }) {
   const alldrugs = [...allDrugs];
   const [currentIndex, setCurrentIndex] = useState(9);
   const freeIndexes = [
@@ -49,7 +49,7 @@ export default function Calender({ allDrugs }) {
         <button className="btn btn-light border border-1 m-1" onClick={() => setCurrentIndex((prev) => prev - 1)} type="button">Предудыдущая неделя</button>
         <button className="btn btn-light border border-1 m-1" onClick={() => setCurrentIndex((prev) => prev + 1)} type="button">Следущая неделя</button>
       </div>
-      {threeFreeDrugs.map((el) => <OneLittleCard key={el.id} drug={el} />)}
+      {threeFreeDrugs.map((el) => <OneLittleCard setModal={setModal} key={el.id} drug={el} />)}
     </div>
   );
 }
