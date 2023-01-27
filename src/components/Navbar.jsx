@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import ModalWindow from './ModalWindow';
 
-export default function Navbar({ user }) {
+export default function Navbar({ user, modal }) {
   const logoutHandler = () => {
     axios('/api/user/logout')
       .then(() => {
@@ -30,10 +30,10 @@ export default function Navbar({ user }) {
           {!user?.id ? (
             <>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/signup">Registration</a>
+                <a className="nav-link active" aria-current="page" href="/signup">Регистрация</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/signin">Login</a>
+                <a className="nav-link active" aria-current="page" href="/signin">Вход</a>
               </li>
             </>
           ) : (
@@ -45,15 +45,13 @@ export default function Navbar({ user }) {
                 <h4 style={{ color: '#3a3f58' }}>{user?.name}</h4>
                 <a className="navbar-brand" href="/profile"><h5 style={{ color: '#3a3f58' }}>Личный кабинет</h5></a>
               </div>
-              <ModalWindow />
+              <ModalWindow modal={modal}/>
               <div>
                 <button style={{ marginLeft: '20%', background: '#3a3f58', color: '#ece6cd' }} onClick={logoutHandler} type="button" className="btn btn-light border border-dark">Выйти</button>
               </div>
             </div>
           )}
-
         </ul>
-
       </div>
     </nav>
   );

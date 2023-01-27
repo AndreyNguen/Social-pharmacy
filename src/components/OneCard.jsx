@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function OneCard({ drug, setModal }) {
   const cartHandler = () => {
-    localStorage.setItem(`${drug.id}-${drug.name}`, JSON.stringify(drug));
+    // localStorage.setItem(`${drug.id}-${drug.name}`, JSON.stringify(drug));
     setModal((prev) => [...prev, drug]);
   };
   return (

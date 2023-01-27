@@ -9,9 +9,9 @@ import OneLittleCard from './OneLittleCard';
 //   return arr;
 // }
 
-export default function Calender({ allDrugs }) {
+export default function Calender({ allDrugs, setModal }) {
   const alldrugs = [...allDrugs];
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(9);
   const freeIndexes = [
     [5, 1, 2],
     [4, 2, 3],
@@ -31,7 +31,12 @@ export default function Calender({ allDrugs }) {
     [9, 3, 2],
     [2, 4, 1],
   ];
-
+  if (currentIndex < 0) {
+    return setCurrentIndex(6);
+  }
+  if (currentIndex >= freeIndexes.length) {
+    return setCurrentIndex(7);
+  }
   // useState -> currentIndex
   // onClick -> currentIndex++ / --
   // useEffect: [currentIndex] -> threeFreeDrugs % freeIndexes.length !
@@ -44,7 +49,7 @@ export default function Calender({ allDrugs }) {
         <button style={{ background: '#3a3f58', color: '#ece6cd' }} className="btn btn-light border border-1 m-1" onClick={() => setCurrentIndex((prev) => prev - 1)} type="button">Предудыдущая неделя</button>
         <button style={{ background: '#3a3f58', color: '#ece6cd' }} className="btn btn-light border border-1 m-1" onClick={() => setCurrentIndex((prev) => prev + 1)} type="button">Следущая неделя</button>
       </div>
-      {threeFreeDrugs.map((el) => <OneLittleCard key={el.id} drug={el} />)}
+      {threeFreeDrugs.map((el) => <OneLittleCard setModal={setModal} key={el.id} drug={el} />)}
     </div>
   );
 }

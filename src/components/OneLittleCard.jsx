@@ -1,8 +1,7 @@
 import React from 'react';
 
-export default function OneLittleCard({ drug }) {
-  const cartHandler = () => {
-    localStorage.setItem(`${drug.id}-${drug.name}`, JSON.stringify(drug));
+export default function OneLittleCard({ drug, setModal}) {
+const cartHandler = () => {
     setModal((prev) => [...prev, drug]);
   };
   return (
