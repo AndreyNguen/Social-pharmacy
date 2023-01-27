@@ -18,9 +18,18 @@ export default function OneCard({ drug, setModal }) {
       <div className="body" style={{ flex: '1 1 auto' }}>
         <h5 className="card-title">{drug.name}</h5>
         <p className="card-text">
-          Стоимость:
+          <strike>
+            Стоимость:
+            {' '}
+            {drug.price}
+            {' '}
+            руб.
+          </strike>
+        </p>
+        <p className="card-text">
+          Стоимость co скидкой:
           {' '}
-          {drug.price}
+          {Math.floor(drug.price * 8 / 10)}
           {' '}
           руб.
         </p>

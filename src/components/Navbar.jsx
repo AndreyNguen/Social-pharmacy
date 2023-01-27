@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import ModalWindow from './ModalWindow';
 
-export default function Navbar({ user, modal }) {
+export default function Navbar({ user, modal, setModal }) {
   const logoutHandler = () => {
     axios('/api/user/logout')
       .then(() => {
@@ -19,7 +19,6 @@ export default function Navbar({ user, modal }) {
             <li className="nav-item">
               <a href="/">
                 <img className="figure-img img-fluid rounded" src="https://img.icons8.com/pastel-glyph/64/null/hospital--v6.png" alt="noimg:(" href="/" />
-                АПТЕКА
               </a>
             </li>
           </ul>
@@ -45,7 +44,7 @@ export default function Navbar({ user, modal }) {
                 <h4 style={{ color: '#3a3f58' }}>{user?.name}</h4>
                 <a className="navbar-brand" href="/profile"><h5 style={{ color: '#3a3f58' }}>Личный кабинет</h5></a>
               </div>
-              <ModalWindow model={modal} />
+              <ModalWindow setModal={setModal} modal={modal} />
               <div>
                 <button style={{ marginLeft: '20%', background: '#3a3f58', color: '#ece6cd' }} onClick={logoutHandler} type="button" className="btn btn-light border border-dark">Выйти</button>
               </div>

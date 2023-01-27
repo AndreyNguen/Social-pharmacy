@@ -6,3 +6,32 @@ html,body{
 html {
     margin: 20px;
 }
+
+footer .info {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 1000px;
+}
+
+footer .footer-text {
+    margin-left: 10px;
+    margin-right: 50px;
+    font-family: 'IBM Plex Mono';
+}
+
+footer .bottom-text {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+footer li {
+    list-style-type: none;
+}
+
+.socials_item {
+    max-width: 40px;
+}
+
+/* .info_links {
+    margin-top: 10px;
+} */

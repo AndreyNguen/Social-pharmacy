@@ -1,6 +1,9 @@
 import React from 'react';
 
-export default function ModalCard({ el }) {
+export default function ModalCard({ el, setModal }) {
+  const deleteHandler = (id) => {
+    setModal((prev) => prev.filter((elem) => elem.id !== id));
+  };
   return (
     <div className="modal-body">
       <p className="modal-text">
@@ -14,6 +17,8 @@ export default function ModalCard({ el }) {
         {' '}
         {el.price}
       </p>
+      <button onClick={() => deleteHandler(el.id)} className="btn border border-1 border-dark round-1" type="button">Удалить</button>
     </div>
+
   );
 }

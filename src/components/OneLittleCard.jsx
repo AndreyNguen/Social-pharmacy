@@ -1,6 +1,10 @@
 import React from 'react';
 
 export default function OneLittleCard({ drug, setModal }) {
+  const cartHandler = () => {
+    drug.price = 0;
+    setModal((prev) => [...prev, drug]);
+  };
   return (
     <div className="card col-6 m-2" style={{ width: '20rem', padding: '10px' }}>
       <div className="image" style={{ maxHeight: '326px', minHeight: '326px' }}>
