@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function OneLittleCard({ drug, setModal }) {
   const cartHandler = () => {
+    drug.price = 0;
     setModal((prev) => [...prev, drug]);
   };
   return (
