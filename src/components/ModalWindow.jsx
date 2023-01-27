@@ -18,7 +18,6 @@ export default function ModalWindow({ modal, setModal }) {
             <div>
               { modal?.map((el) => <ModalCard setModal={setModal} key={el.id} el={el} />)}
             </div>
-
             <div className="modal-footer" style={{ display: 'flex', justifyContent: 'space-between' }}>
               <div>
                 Итого:
@@ -30,7 +29,6 @@ export default function ModalWindow({ modal, setModal }) {
           </div>
         </div>
       </div>
-
     </>
   );
 }
