@@ -10,8 +10,15 @@ export default function OneLittleCard({ drug, setModal }) {
         <img src={drug.img} className="card-img-top" alt="noImage" style={{ height: '100%', objectFit: 'cover' }} />
       </div>
       <div className="body" style={{ flex: '1 1 auto' }}>
-        <h5 className="card-title">{drug.name}</h5>
+        <h5 className="card-title">
+          {drug.name}
+          {' '}
+          <h6>Бесплатно</h6>
+        </h5>
       </div>
+      <button onClick={cartHandler} type="button" style={{ background: '#3a3f58', color: '#ece6cd' }} className="btn btn-primary border border-1 border-dark">
+        В корзину
+      </button>
     </div>
   );
 }
