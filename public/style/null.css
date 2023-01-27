@@ -3,6 +3,6 @@ html,body{
     background-color: #ece6cd;
 }
 
-.image-container {
-    background-color: gray;
+html {
+    margin: 20px;
 }

@@ -25,7 +25,7 @@ export default function Drugs({ allDrugs, setModal }) {
 
   return (
     <>
-      <Calender allDrugs={allDrugs} />
+      <Calender setModal={setModal} allDrugs={allDrugs} />
       <div style={{ display: 'flex', flexDirection: 'row', width: '30rem' }}>
         <select
           className="form-select"

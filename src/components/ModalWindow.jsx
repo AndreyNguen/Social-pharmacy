@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import ModalCard from './ModalCard';
 
-export default function ModalWindow({ drug }) {
-  const [drugsCart, setDrugsCart] = useState([]);
-  useEffect(() => {
-    console.log('YA IN USEEFFECT');
-    for (let i = 1; i <= localStorage.length; i += 1) {
-      setDrugsCart((prev) => [...prev, localStorage.key(i)]);
-    }
-  }, []);
-  console.log(drugsCart);
+export default function ModalWindow({ modal }) {
+  console.log(modal, 'dasdasdasdasdasdasdasd');
+  const allPrice = modal.reduce((acc, el) => acc + el.price, 0);
   return (
     <>
-      <button style={{ background: '#3a3f58', color: '#ece6cd' }} type="button" className="btn btn-light border border-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <button type="button" style={{ background: '#3a3f58', color: '#ece6cd' }} className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Корзина
       </button>
       <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -21,13 +16,16 @@ export default function ModalWindow({ drug }) {
               <h1 className="modal-title fs-5" id="staticBackdropLabel">Корзина</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
             </div>
-            <div className="modal-body">
-              <p className="modal-text">Наименование</p>
-              <p className="modal-text">Количество</p>
-              <p className="modal-text">Стоимость</p>
+            <div>
+              { modal?.map((el) => <ModalCard key={el.id} el={el} />)}
             </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+
+            <div className="modal-footer" style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <div>
+                Итого:
+                {' '}
+                {allPrice}
+              </div>
               <button type="button" className="btn btn-primary">Оформить заказ</button>
             </div>
           </div>
