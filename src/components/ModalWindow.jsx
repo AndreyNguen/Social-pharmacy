@@ -1,6 +1,7 @@
 import React from 'react';
 import ModalCard from './ModalCard';
 
+
 export default function ModalWindow({ modal }) {
   console.log(modal);
   const allPrice = modal.reduce((acc, el) => acc + el.price, 0);
@@ -19,7 +20,6 @@ export default function ModalWindow({ modal }) {
             <div>
               { modal?.map((el) => <ModalCard key={el.id} el={el} />)}
             </div>
-
             <div className="modal-footer" style={{ display: 'flex', justifyContent: 'space-between' }}>
               <div>
                 Итого:
@@ -32,7 +32,6 @@ export default function ModalWindow({ modal }) {
           </div>
         </div>
       </div>
-
     </>
   );
 }
