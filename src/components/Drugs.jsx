@@ -12,7 +12,7 @@ export default function Drugs({ allDrugs, setModal }) {
       setDrugs(
         drugs
           .filter((el) => el.status === 'yes')
-          .concat(drugs.filter((el) => el.status === 'no')),
+          .concat(drugs.filter((el) => el.status === 'no'))
       );
     }
     if (sort === 'По увеличению цены') {
@@ -34,7 +34,7 @@ export default function Drugs({ allDrugs, setModal }) {
           onChange={(event) => sortHandler(event.target.value)}
         >
           <option disabled value="">
-            Сортирока товаров
+            Сортировка товаров
           </option>
           <option value={drugs.status}>По наличию</option>
           <option value={drugs.price}>По увеличению цены</option>
@@ -42,7 +42,9 @@ export default function Drugs({ allDrugs, setModal }) {
         </select>
       </div>
       <div className="row mt-3" style={{ justifyContent: 'center' }}>
-        {drugs?.map((drug) => <OneCard setModal={setModal} drug={drug} key={drug.id} />)}
+        {drugs?.map((drug) => (
+          <OneCard setModal={setModal} drug={drug} key={drug.id} />
+        ))}
       </div>
     </>
   );

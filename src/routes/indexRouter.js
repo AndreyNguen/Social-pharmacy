@@ -1,5 +1,4 @@
 import express from 'express';
-// import checkAuth from '../middlewares/checkAuth';
 import checkNoAuth from '../middlewares/checkNoAuth';
 import { Drug } from '../../db/models';
 
