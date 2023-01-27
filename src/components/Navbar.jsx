@@ -1,9 +1,8 @@
 import axios from 'axios';
 import React from 'react';
 import ModalWindow from './ModalWindow';
-import Profile from './Profile';
 
-export default function Navbar({ user }) {
+export default function Navbar({ user, modal }) {
   const logoutHandler = () => {
     axios('/api/user/logout')
       .then(() => {
@@ -28,24 +27,24 @@ export default function Navbar({ user }) {
           {!user?.id ? (
             <>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/signup">Registration</a>
+                <a className="nav-link active" aria-current="page" href="/signup">Регистрация</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/signin">Login</a>
+                <a className="nav-link active" aria-current="page" href="/signin">Вход</a>
               </li>
             </>
           ) : (
             <div style={{ display: 'flex', columnGap: '15px', alignItems: 'center' }}>
               <div style={{ display: 'flex', alignItems: 'center', columnGap: '15px' }}>
                 <h5>
-                  Hello
+                  Привет
                 </h5>
                 <h4>{user?.name}</h4>
-                <a className="navbar-brand" href="/profile"><h4>Profile</h4></a>
-                <ModalWindow />
+                <a className="navbar-brand" href="/profile"><h4>Профиль</h4></a>
+                <ModalWindow modal={modal} />
               </div>
               <div>
-                <button style={{ marginLeft: '20%' }} onClick={logoutHandler} type="button" className="btn btn-light">Logout</button>
+                <button style={{ marginLeft: '20%' }} onClick={logoutHandler} type="button" className="btn btn-light">Выйти</button>
               </div>
             </div>
           )}
