@@ -27,9 +27,9 @@ export default function OneCard({ drug, setModal }) {
           </strike>
         </p>
         <p className="card-text">
-          Цена со скидкой 20%:
+          Стоимость co скидкой:
           {' '}
-          {Math.floor(drug.price * (8 / 10))}
+          {Math.floor(drug.price * 8 / 10)}
           {' '}
           руб.
         </p>

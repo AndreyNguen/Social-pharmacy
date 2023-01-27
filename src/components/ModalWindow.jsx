@@ -1,13 +1,11 @@
 import React from 'react';
 import ModalCard from './ModalCard';
 
-
-export default function ModalWindow({ modal }) {
-  console.log(modal);
+export default function ModalWindow({ modal, setModal }) {
   const allPrice = modal.reduce((acc, el) => acc + el.price, 0);
   return (
     <>
-      <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <button type="button" style={{ background: '#3a3f58', color: '#ece6cd' }} className="btn btn-primary border border-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Корзина
       </button>
       <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -18,7 +16,7 @@ export default function ModalWindow({ modal }) {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
             </div>
             <div>
-              { modal?.map((el) => <ModalCard key={el.id} el={el} />)}
+              { modal?.map((el) => <ModalCard setModal={setModal} key={el.id} el={el} />)}
             </div>
             <div className="modal-footer" style={{ display: 'flex', justifyContent: 'space-between' }}>
               <div>
@@ -26,7 +24,6 @@ export default function ModalWindow({ modal }) {
                 {' '}
                 {allPrice}
               </div>
-              {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button> */}
               <button type="button" className="btn btn-primary">Оформить заказ</button>
             </div>
           </div>

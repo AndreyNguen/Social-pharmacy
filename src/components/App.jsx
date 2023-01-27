@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Drugs from './Drugs';
+import Footer from './Footer';
 import Navbar from './Navbar';
 import Profile from './Profile';
 import SignIn from './userComponents/SignIn';
@@ -12,7 +13,7 @@ export default function App({ user, allDrugs }) {
   return (
     <>
       <div>
-        <Navbar modal={modal} user={user} />
+        <Navbar setModal={setModal} modal={modal} user={user} />
       </div>
       <Routes>
         <Route path="/" element={<Drugs setModal={setModal} allDrugs={allDrugs} />} />

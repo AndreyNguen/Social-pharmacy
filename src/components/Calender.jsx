@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 import OneLittleCard from './OneLittleCard';
 
-// function genRandomCount(max) {
-//   let arr = [0, 0, 0];
-//   while (!(arr[0] !== arr[1] && arr[2] !== arr[1] && arr[2] !== arr[0])) {
-//     arr = arr.map(() => Math.floor(max * Math.random()));
-//   }
-//   return arr;
-// }
-
 export default function Calender({ allDrugs, setModal }) {
   const alldrugs = [...allDrugs];
   const [currentIndex, setCurrentIndex] = useState(9);

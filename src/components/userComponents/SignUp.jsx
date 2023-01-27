@@ -42,7 +42,8 @@ export default function SignUp() {
             type="text"
             className="form-control border border-2 border-dark"
             id="userName"
-            placeholder="Add your Name"
+            placeholder="Введите своё имя"
+            style={{ background: 'lightgrey' }}
           />
         </div>
         <div className="mb-3">
@@ -51,7 +52,8 @@ export default function SignUp() {
             type="email"
             className="form-control border border-2 border-dark"
             id="userEmail"
-            placeholder="Add your Email"
+            placeholder="Введите свою электронную почту"
+            style={{ background: 'lightgrey' }}
           />
         </div>
         <div className="mb-3">
@@ -60,9 +62,10 @@ export default function SignUp() {
             type="password"
             className="form-control border border-2 border-dark"
             id="userPassword"
-            placeholder="Add your Password"
+            placeholder="Придумайте пароль"
             required
             minLength={3}
+            style={{ background: 'lightgrey' }}
           />
         </div>
         <div className="mb-3">
@@ -71,9 +74,10 @@ export default function SignUp() {
             type="password"
             className="form-control border border-2 border-dark"
             id="userPassword"
-            placeholder="Repeat your Password"
+            placeholder="Повторите пароль"
             required
             minLength={3}
+            style={{ background: 'lightgrey' }}
           />
         </div>
         <div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Calender from './Calender';
+import Footer from './Footer';
 import OneCard from './OneCard';
 
 export default function Drugs({ allDrugs, setModal }) {
@@ -45,6 +46,9 @@ export default function Drugs({ allDrugs, setModal }) {
         {drugs?.map((drug) => (
           <OneCard setModal={setModal} drug={drug} key={drug.id} />
         ))}
+      </div>
+      <div>
+        <Footer />
       </div>
     </>
   );

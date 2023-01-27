@@ -28,7 +28,8 @@ export default function SignIn() {
             type="email"
             className="form-control border border-2 border-dark"
             id="userEmail"
-            placeholder="Add your Email"
+            placeholder="Введите свою электронную почту"
+            style={{ background: 'lightgrey' }}
           />
         </div>
         <div className="mb-3">
@@ -37,7 +38,8 @@ export default function SignIn() {
             type="password"
             className="form-control border border-2 border-dark"
             id="userPassword"
-            placeholder="Add your Password"
+            placeholder="Введите пароль"
+            style={{ background: 'lightgrey' }}
           />
         </div>
         <button className="btn btn-dark" type="submit">Enter</button>
